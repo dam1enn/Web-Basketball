@@ -174,15 +174,21 @@ header {
         display: flex;
     }
 
-    .navbar-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
+   .navbar-links {
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
         text-align: center;
         background-color: #444;
     }
 
     .navbar-links.active {
-        display: flex;
+         visibility: visible;
+    opacity: 1;
+    max-height: 500px; /* Ensure enough height */
+    display: flex;
+    flex-direction: column;
     }
 }
